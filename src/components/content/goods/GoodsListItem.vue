@@ -3,7 +3,7 @@
     <img :src="goodsItem.show.img" alt="">
     <div class="goods-info">
       <p class="goods-title">{{goodsItem.title}}</p>
-      <span class="price">{{goodsItem.price}}</span>
+      <span class="price">{{"￥"+goodsItem.price}}</span>
       <span class="collect">{{goodsItem.cfav}}</span>
     </div>
   </div>
@@ -25,10 +25,13 @@
 
 <style scoped>
   .goods-list-item{
-    width: 48%;
+    position: relative;
+    padding-bottom: 40px;
+    width: 50%;
   }
   .goods-list-item img{
     width:100%;
+    border-radius: 10px;
     padding: 5px;
   }
   .goods-title{
@@ -38,15 +41,24 @@
   }
   .price{
     color: var(--color-tint);
+    margin-right: 20px;
   }
   .goods-info{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     text-align: center;
+    padding: 0 5px 0;
+  }
+  .collect{
+    position: relative;
   }
   .collect::before {
     content: '';
     position: absolute;
     left: -15px;
-    top: -1px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 14px;
     height: 14px;
     background: url("~assets/img/common/collect.svg") 0 0/14px 14px;

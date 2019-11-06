@@ -25,6 +25,7 @@
     methods: {
       click(index) {
         this.correntIndex = index
+        this.$emit("tabClick",index)
       }
     }
   }
