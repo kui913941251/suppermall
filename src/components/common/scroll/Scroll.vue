@@ -29,7 +29,6 @@
         pullUpLoad:true
       })
       this.scroll.on("scroll",position => {
-        //console.log(position);
         this.$emit("scroll",position)
       })
       this.scroll.on("pullingUp",() => {
@@ -39,6 +38,9 @@
     methods: {
       scrollTo(x,y,time) {
         this.scroll.scrollTo(x,y,time)
+      },
+      refresh() {
+        this.scroll && this.scroll.refresh()
       }
     }
   }
